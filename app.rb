@@ -23,7 +23,9 @@ end
 
 # главная страница, на ней отображаемвсе написанные ранее посты
 get '/' do
-	@results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC'
+	@results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC' # все посты
+	# запрос для счетчика коментов
+	@comment_counter = @db.execute 'SELECT post_id, COUNT(*) AS count FROM Comments GROUP BY post_id' 
 	erb :index			
 end
 
