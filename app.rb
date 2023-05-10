@@ -36,8 +36,10 @@ post '/new' do
 	content = params[:content]
 	author = params[:author]
 
-	if content.size <= 0
-		@error = 'Введите текст'
+	# валидация
+	hh = {content: 'Введите текст вашего поста', author: 'Введите ваш никнэйм'}
+	if content.size<=0 or author.size<=0
+		@error = hh.select{|k,_| params[k]==''}.values.join(', ')
 		return erb :new
 	end 
 
