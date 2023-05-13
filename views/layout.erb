@@ -6,24 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leprosorium</title>
   <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-  <script src="https://use.fontawesome.com/7599d4c6a9.js"></script>
-  <link rel="stylesheet" href="/css/main.css" media="all">
+  <script src="https://use.fontawesome.com/7599d4c6a9.js"></script> 
+  <link rel="stylesheet" href="/css/styles.css" media="all">
 </head>
 <body>
 
-  <h1 style="color: lightblue;">
-    layout.erb используeтся. Этот блок будет на всех страницах<br>
-    <a href="/">Главная</a><br>
-    <a href="/new">Написать пост</a><br>
-    layout.erb используeтся. Этот блок будет на всех страницах
-  </h1>
+  <!--============= Хэдер ===============-->
+  <header>
+    <div id="head-main">
+      <img src="/img/favicon.png" alt="">
+      <div id="h1-box1">     
+        <%# <a href="#" title="Leprosorium"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a> %>
+        <a href="/" title="На главную страницу">Leprosorium</a>
+      </div>
+      <div id="h1-box2">
+        <a href="/" class="trans" title="Страница с постами">Главная</a>
+        <a href="/new" class="trans" title="Написать пост">Запостить</a>
+      </div>
+      <div id="h1-box3">
+        <a class="h1-but1 trans" href="#">Войти</a>
+        <a class="h1-but2 trans" href="#">Регистрация</a>
+      </div>
+    </div>
+  </header>
 
-  <div><!-- блок сообщения об ошибке -->
+
+  <!--===== блок сообщения об ошибке ========-->
+  <div>
     <% if @error && @error.size > 0 %>
       <div style="color: red;"><%= @error %></div>
     <% end %>
   </div>
 
+  <!--============= yield ===============-->
   <%= yield %>
  
 </body>

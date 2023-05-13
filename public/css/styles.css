@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+
+/*=====================================
+Общие стили
+=====================================*/
+
+body {
+  margin: 0;
+  padding: 0;
+  outline: none; /* убираем обводку по умолчанию, например у активных инпут полей */
+  background-color: #eee;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {text-decoration: none;}
+
+.trans:hover {
+  -webkit-transition: all.6s ease;
+	-moz-transition: all.6s ease;
+	-o-transition: all.6s ease;
+	-ms-transition: all.6s ease;
+	transition: all.6s ease;
+}
+
+
+/*=====================================
+Хедер
+=====================================*/
+
+header { 
+  background-color: #333;
+  padding: 1rem 15%;
+}
+
+#head-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header img { width: 3rem;}
+
+header a {color: #eee;}
+
+header a[title="Leprosorium"] {
+  color: #c53;
+  font-size: 2.5rem;
+}
+header a[title="На главную страницу"] {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#h1-box2 { font-size: 1.3rem; }
+#h1-box2>a { margin-right: 3rem; }
+#h1-box2>a:hover { color: #c53; }
+
+#h1-box3>a {
+  font-weight: 500;
+  border-radius: 5px;
+  margin-right: .8rem;
+  padding: .7rem 1.2rem;
+}
+#h1-box3>a:hover {
+  background-color: rgb(79, 106, 176);
+  color: white;
+}
+
+#h1-box3 .h1-but1 {
+  color: #333;
+  background-color: white;
+}
+#h1-box3 .h1-but2 { background-color: #c53;}
+
+@media (max-width: 1330px) {
+  header { padding: 1rem 5%;}
+  #h1-box3 { 
+    margin: 1rem 0; 
+    font-size: .9rem;
+  }
+}
