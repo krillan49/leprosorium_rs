@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'sqlite3'
 
+# =============================================
 # метод с инициальзацией БД
+# =============================================
 def init_db 
 	@db = SQLite3::Database.new './db/leprosorium.db'
 	@db.results_as_hash = true
@@ -21,7 +23,9 @@ configure do
 	(id INTEGER PRIMARY KEY AUTOINCREMENT, created_date DATE, content TEXT, post_id INTEGER)'	
 end
 
+# =============================================
 # главная страница, на ней отображаемвсе написанные ранее посты
+# =============================================
 get '/' do
 	@results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC' # все посты
 	# запрос для счетчика коментов
@@ -29,7 +33,9 @@ get '/' do
 	erb :index			
 end
 
+# =============================================
 # страница для создания нового поста
+# =============================================
 get '/new' do
 	erb :new
 end
@@ -51,13 +57,16 @@ post '/new' do
 	redirect to '/'
 end
 
+# =============================================
+# страницы отдельных постов и коментариев к ним
+# =============================================
+
 # метод для присвоения запросов из БД о посте и комментариям к нему в переменные для видов:
 def add_post_with_id_from_link_and_comments_for_it_from_db(post_id)
 	@row = (@db.execute 'SELECT * FROM Posts WHERE id = ?', [post_id])[0] # в массиве 1 элемент
 	@comments = @db.execute 'SELECT * FROM Comments WHERE post_id = ? ORDER BY id', [post_id]
 end
 
-# страницы отдельных постов и коментариев к ним
 get '/details/:post_id' do
 	post_id = params[:post_id]
 	add_post_with_id_from_link_and_comments_for_it_from_db(post_id)
