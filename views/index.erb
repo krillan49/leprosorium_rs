@@ -37,8 +37,14 @@
 <div class="page-counter">
 	<% ('1'..@page_counter.to_s).each do |no| %>
 
-		<div class='page-no'>
-			<a href="/<%=no%>" class="trans"><%= no %></a>
+		<div class='page-no'>			
+			<% if (!@page_id && no == '1') or @page_id == no %>
+				<!-- tytle для селектора для кнопки активной страницы -->
+				<% title = 'title="active"' %>
+			<% else %>
+				<% title = '' %>
+			<% end %>		
+			<a href="/<%=no%>" class="trans" <%= title %>><%= no %></a>
 		</div>
 
 	<% end %>

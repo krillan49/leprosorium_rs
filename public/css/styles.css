@@ -152,6 +152,9 @@ index.erb
   color: white;
   border: 1px solid silver;
 }
+.page-no>[title=active] {
+  background-color: #c53;
+}
 .page-no>a:hover {
-  color: #c53;
+  background-color: rgb(79, 106, 176);
 }
