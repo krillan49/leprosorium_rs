@@ -1,16 +1,26 @@
 <h1 class='text-center'>Latest Posts</h1>
-<br>
 
 <% @results.each do |row| %>
-	<p>
-		<h4>Post №<%= row['id'] %></h4> <!-- Выводим номер поста -->
-		<%= row['content'] %> <!-- Выводим сам пост -->
-		<br><br>
-		Added by <b><%= row['author'] %></b> at <%= row['created_date'] %> <!-- Выводим автора и дату поста -->
-		<br><br>
-		<a href="/details/<%= row['id'] %>"> <!-- тело ссылки со счетчиком комментариев -->
-			Comments(<%= @comment_counter.find{|hh| hh['post_id'] == row['id'] }['count'] rescue 0 %>)
-		</a> 
-	</p>
-	<hr>
+	<div class='post-index'>
+
+		<div class='post-index-flexmom'>
+			<div class='post-index-head'>
+				<h4><%= row['author'] %></h4>
+				<span>Post №<%= row['id'] %></span>
+				<p><%= row['created_date'] %></p>
+			</div>
+
+			<div class='post-index-content'>
+				<%= row['content'] %> 		
+			</div>
+		</div>
+
+		<div class='post-index-comments text-center'>
+			<a href="/details/<%= row['id'] %>"> 
+				<!-- тело ссылки со счетчиком комментариев -->
+				Comments(<%= @comment_counter.find{|hh| hh['post_id'] == row['id'] }['count'] rescue 0 %>)
+			</a>
+		</div>
+
+	</div>
 <% end %>

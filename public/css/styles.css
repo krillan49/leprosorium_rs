@@ -90,3 +90,47 @@ header a[title="На главную страницу"] {
 /*=====================================
 index.erb
 =====================================*/
+
+.post-index {
+  background-color: #bbb;
+  margin: 2rem 15%;
+  padding: 1rem;
+  padding-bottom: .5rem;
+}
+@media (max-width: 1330px) {
+  .post-index {
+    margin: 2rem 5%;
+  }
+}
+
+.post-index-flexmom {
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 800px) {
+  .post-index-flexmom {
+    flex-direction: column;
+  }
+}
+
+.post-index-head { 
+  flex-basis: 15%;
+}
+
+.post-index-content {
+  flex-basis: 80%;
+
+  background-color: #ddd;
+  padding: 1rem;
+}
+
+.post-index-comments {
+  margin-top: .5rem;
+}
+
+.post-index-comments>a {
+  color: rgb(79, 106, 176);
+}
+.post-index-comments>a:hover {
+  color: #c53;
+}
