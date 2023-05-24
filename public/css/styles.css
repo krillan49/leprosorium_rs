@@ -91,6 +91,8 @@ header a[title="На главную страницу"] {
 index.erb
 =====================================*/
 
+/*   Посты  */
+
 .post-index {
   background-color: #bbb;
   margin: 2rem 15%;
@@ -133,4 +135,23 @@ index.erb
 }
 .post-index a:hover {
   color: rgb(79, 106, 176);
+}
+
+/*  Номера страниц  */
+
+.page-counter {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.page-no>a {
+  font-size: 2rem;  
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  border: 1px solid silver;
+}
+.page-no>a:hover {
+  color: #c53;
 }

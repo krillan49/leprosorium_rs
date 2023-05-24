@@ -1,5 +1,6 @@
 <h1 class='text-center'>Latest Posts</h1>
 
+<!-- =====================  Посты  ======================= -->
 <% @results.each do |row| %>
 	<div class='post-index'>
 
@@ -31,3 +32,14 @@
 
 	</div>
 <% end %>
+
+<!-- =====================  Номера страниц  ======================= -->
+<div class="page-counter">
+	<% ('1'..@page_counter.to_s).each do |no| %>
+
+		<div class='page-no'>
+			<a href="/<%=no%>" class="trans"><%= no %></a>
+		</div>
+
+	<% end %>
+</div>

@@ -27,8 +27,21 @@ end
 # главная страница, на ней отображаемвсе написанные ранее посты
 # =============================================
 get '/' do
-	@results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC' # все посты
+	@results = @db.execute 'SELECT * FROM Posts ORDER BY id DESC LIMIT 5' # все посты
 	# запрос для счетчика коментов
+	@comment_counter = @db.execute 'SELECT post_id, COUNT(*) AS count FROM Comments GROUP BY post_id' 
+	# номера страниц дя главной страницы
+	@page_counter = (@db.execute('SELECT * FROM Posts').size / 5.0).ceil
+	erb :index			
+end
+
+# для следующих страниц(по 5 постов)
+get '/:page_id' do
+	@page_id = params[:page_id]
+	offset = (params[:page_id].to_i - 1) * 5
+	@page_counter = (@db.execute('SELECT * FROM Posts').size / 5.0).ceil
+
+	@results = @db.execute('SELECT * FROM Posts ORDER BY id DESC LIMIT ?, 5', [offset])
 	@comment_counter = @db.execute 'SELECT post_id, COUNT(*) AS count FROM Comments GROUP BY post_id' 
 	erb :index			
 end
