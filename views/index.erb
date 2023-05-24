@@ -11,7 +11,14 @@
 			</div>
 
 			<div class='post-index-content'>
-				<%= row['content'] %> 		
+				<% if row['content'].size > 900 %>
+					<!-- если пост слишком длинный берем только 900 символов или менее до пробела -->
+					<% i = row['content'][0..900].reverse.index(' ') %>
+					<%= row['content'][0..900-i] %>
+				<% else %>
+					<%= row['content'] %> 
+				<% end %>	
+				<a href="/details/<%= row['id'] %>">... Читать далее &raquo;</a>	
 			</div>
 		</div>
 

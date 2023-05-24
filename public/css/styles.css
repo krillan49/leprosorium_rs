@@ -128,9 +128,9 @@ index.erb
   margin-top: .5rem;
 }
 
-.post-index-comments>a {
-  color: rgb(79, 106, 176);
-}
-.post-index-comments>a:hover {
+.post-index a {
   color: #c53;
+}
+.post-index a:hover {
+  color: rgb(79, 106, 176);
 }
