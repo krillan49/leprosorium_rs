@@ -1,30 +1,34 @@
 <h1 class='text-center'>Post details</h1>
 
-<br>
-<p>
-	<%= @row['content'] %>
-	<br><br>
-	Added by <b><%= @row['author'] %></b> at <%= @row['created_date'] %>
-</p>
+<div class='post-details'>
+
+	<div class='post-details-content'>
+		<div><%= @row['content'] %></div>
+		<p>Added by <b><%= @row['author'] %></b> at <%= @row['created_date'] %></p>
+		
+		<hr>
+
+		<!-- Форма для того чтобы оставить комментарии к посту -->
+		<form action="/details/<%= @row['id'] %>" method="POST">
+			<textarea name="content" placeholder="Напишите ваш комментарий"></textarea>
+			<br>
+			<button type="submit" class="button-1">Add comment</button>
+		</form>
+	</div>
 
 
-<br>
-<h4>Comments:</h4>
-<br>
+	<h4 class='text-center'>Comments:</h4>
 
-<!-- Уже написанные комментарии из запроса выбравшего комментарии для конкретного поста -->
-<% @comments.each do |comment| %>
-	<p>
-		<%= comment['content'] %>
-		<br><br>
-		<span style="font-size: 80%; color: #999;">Added at <%= comment['created_date'] %></span>
-	</p>
-	<hr>
-<% end %>
+	<!-- Уже написанные комментарии из запроса выбравшего комментарии для конкретного поста -->
+	<% @comments.each do |comment| %>
+		<div>
+			<p class='comment-details-content'>
+				<%= comment['content'] %>
+			</p>
+			<span class='c-d-date'>Added at <%= comment['created_date'] %></span>
+		</div>
+		<hr>
+	<% end %>
 
-<!-- Форма для того чтобы оставить комментарии к посту -->
-<form action="/details/<%= @row['id'] %>" method="POST">
-	<textarea name="content" class="form-control" rows="6" placeholder="Напишите ваш комментарий"></textarea>
-	<br>
- 	<button type="submit" class="btn btn-primary">Add comment</button>
-</form>
+</div>
+

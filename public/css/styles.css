@@ -26,6 +26,19 @@ a {text-decoration: none;}
 
 .text-center { text-align: center;}
 
+.button-1 {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: rgb(90, 103, 137);
+  color: lightblue;
+  border: 1px solid lightblue;
+}
+.button-1:hover {
+  background-color: lightblue;
+  color: rgb(90, 103, 137);
+  border: 1px solid rgb(90, 103, 137);
+}
+
 
 /*=====================================
 Хедер  layout.erb
@@ -157,4 +170,76 @@ index.erb
 }
 .page-no>a:hover {
   background-color: rgb(79, 106, 176);
+}
+
+
+/*=====================================
+details.erb 
+=====================================*/
+
+.post-details {
+  margin: 2rem 15%;
+  line-height: 1.5rem;
+}
+
+.post-details-content {
+  padding: 1rem;
+  background-color: rgb(172, 177, 188);
+}
+.post-details-content>div {
+  padding: 1rem;
+  background-color: #ddd;
+  font-weight: bold;
+  text-indent: 1.5rem;
+  color: #555;
+}
+.post-details-content>form {
+  margin-top: 1rem;
+}
+
+.post-details-content textarea {
+  outline: none;
+  border: 0;
+  background-color: #ddd;
+  width: 99.5%;
+  height: 7rem;
+  font-size: 1.5rem;
+}
+
+.comment-details-content {
+  text-indent: 1.5rem;
+}
+.c-d-date {
+  font-size: 80%; 
+  color: #999;
+}
+
+
+/*=====================================
+new.erb 
+=====================================*/
+
+.main-new {
+  margin: 2rem 15%;
+  padding: 1rem;
+  background-color: rgb(172, 177, 188);
+}
+
+.main-new textarea {
+  margin-bottom: 1rem;
+  outline: none;
+  border: 0;
+  background-color: #ddd;
+  width: 99.5%;
+  height: 30rem;
+  font-size: 1.5rem;
+}
+
+.main-new input[name="author"] {
+  margin-bottom: 1rem;
+  outline: none;
+  border: 0;
+  background-color: #ddd;
+  font-size: 2rem;
+  max-width: 99.5%;
 }
