@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   outline: none; /* убираем обводку по умолчанию, например у активных инпут полей */
-  background-color: #eee;
+  background-color: #ddd;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -29,14 +29,13 @@ a {text-decoration: none;}
 .button-1 {
   font-size: 1rem;
   padding: 0.5rem;
-  background-color: rgb(90, 103, 137);
-  color: lightblue;
-  border: 1px solid lightblue;
+  background-color: #c53;
+  color: white;
+  border: 0;
 }
 .button-1:hover {
-  background-color: lightblue;
-  color: rgb(90, 103, 137);
-  border: 1px solid rgb(90, 103, 137);
+  background-color: rgb(79, 106, 176);
+  color: white;
 }
 
 
@@ -135,7 +134,7 @@ index.erb
 .post-index-content {
   flex-basis: 80%;
 
-  background-color: #ddd;
+  background-color: #eee;
   padding: 1rem;
 }
 
@@ -184,11 +183,11 @@ details.erb
 
 .post-details-content {
   padding: 1rem;
-  background-color: rgb(172, 177, 188);
+  background-color: #bbb;
 }
 .post-details-content>div {
   padding: 1rem;
-  background-color: #ddd;
+  background-color: #eee;
   font-weight: bold;
   text-indent: 1.5rem;
   color: #555;
@@ -200,7 +199,7 @@ details.erb
 .post-details-content textarea {
   outline: none;
   border: 0;
-  background-color: #ddd;
+  background-color: #eee;
   width: 99.5%;
   height: 7rem;
   font-size: 1.5rem;
@@ -222,14 +221,14 @@ new.erb
 .main-new {
   margin: 2rem 15%;
   padding: 1rem;
-  background-color: rgb(172, 177, 188);
+  background-color: #bbb;
 }
 
 .main-new textarea {
   margin-bottom: 1rem;
   outline: none;
   border: 0;
-  background-color: #ddd;
+  background-color: #eee;
   width: 99.5%;
   height: 30rem;
   font-size: 1.5rem;
@@ -239,7 +238,7 @@ new.erb
   margin-bottom: 1rem;
   outline: none;
   border: 0;
-  background-color: #ddd;
+  background-color: #eee;
   font-size: 2rem;
   max-width: 99.5%;
 }

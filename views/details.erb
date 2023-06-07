@@ -5,14 +5,14 @@
 	<div class='post-details-content'>
 		<div><%= @row['content'] %></div>
 		<p>Added by <b><%= @row['author'] %></b> at <%= @row['created_date'] %></p>
-		
+
 		<hr>
 
 		<!-- Форма для того чтобы оставить комментарии к посту -->
 		<form action="/details/<%= @row['id'] %>" method="POST">
 			<textarea name="content" placeholder="Напишите ваш комментарий"></textarea>
 			<br>
-			<button type="submit" class="button-1">Add comment</button>
+			<button type="submit" class="button-1 trans">Add comment</button>
 		</form>
 	</div>
 
